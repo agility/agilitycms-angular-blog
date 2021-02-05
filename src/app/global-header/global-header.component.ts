@@ -16,7 +16,7 @@ export class GlobalHeaderComponent implements OnInit {
 	async ngOnInit(): Promise<void> {
 		let obj = await this.agilityService.getHeader()
 		this.globalHeader = obj.fields
-		console.log("header", this.globalHeader)
+		console.log("header", obj)
 	}
 
 }

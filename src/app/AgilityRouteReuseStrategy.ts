@@ -14,10 +14,7 @@ export class AgilityRouteReuseStrategy extends RouteReuseStrategy {
     }
 
     shouldReuseRoute(future: ActivatedRouteSnapshot, curr: ActivatedRouteSnapshot): boolean {
-		console.log("ROUTE REUSE CHECK", future, curr)
-        const test = future.url === curr.url;
-		console.log("ROUTE REUSE TEST RES", test)
-		return test
+		return future.url === curr.url
     }
 
     store(route: ActivatedRouteSnapshot, handle: DetachedRouteHandle | null): void {

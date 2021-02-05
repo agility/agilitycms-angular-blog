@@ -1,7 +1,4 @@
-
-<app-global-header></app-global-header>
-<main class="max-w-screen-xl mx-auto p-4 sm:p-6 lg:p-6 lg:p-8">
-<ng-template [ngIf]="pageStatus === 0">Loading...</ng-template>
+<ng-template [ngIf]="pageStatus === 0"></ng-template>
 <ng-template [ngIf]="pageStatus === 404">Page not found.</ng-template>
 <ng-template [ngIf]="pageStatus === 500">Error loading page.</ng-template>
 <ng-template [ngIf]="pageStatus === 200">
@@ -14,5 +11,3 @@
 	</ng-container>
 
 </ng-template>
-</main>
-<app-global-footer></app-global-footer>
