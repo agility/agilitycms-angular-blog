@@ -1,0 +1,24 @@
+<ng-template [ngIf]="post !== null">
+	<section class="my-6">
+		<div class="flex">
+			<div class="text-4xl sm:text-5xl font-black tracking-wide text-center text-gray-900 mb-10">
+				{{post.title}}
+			</div>
+		</div>
+		<div class="text-center">
+			<div class="font-medium text-primary-700" *ngIf="category !== null">{{ category.title }}</div>
+			<div class="font-bold text-lg sm:text-xl lg:text-2xl text-secondary-500 tracking-wide" *ngIf="author !== null">{{author.name}}</div>
+			<div class="">{{ post.date | date}}</div>
+			<div class="text-gray-700">{{ tagNames }}</div>
+			<div class="my-2 flex items-center justify-center">
+				<picture class="rounded">
+					<source srcset="post.image.url+'?w=1024'" media="(min-width: 1400px)">
+					<source [srcset]="post.image.url+'?w=700'"media="(min-width: 1000px)">
+					<img class="rounded" [src]="post.image.url+'?w=400'" [alt]="post.image.label" loading="lazy"/>
+				</picture>
+			</div>
+		</div>
+		<div class="p-10 prose prose-sm sm:prose lg:prose-lg xl:prose-xl max-w-full" style="max-width:100%" [innerHTML]="post.content">
+			</div>
+	</section>
+</ng-template>

@@ -11,6 +11,9 @@ export class AgilityService {
 
 	private globalHeader = null
 	private globalFooter = null
+	private siteMapFlat = null
+	private siteMapNested = null
+
 
 	constructor() {
 
@@ -24,10 +27,26 @@ export class AgilityService {
 
 	getSitemapFlat(): Promise<any> {
 
-		return this.agilityClient.getSitemapFlat({
-			languageCode: agilityConfig.languageCode,
-			channelName: agilityConfig.channelName
-		})
+		if (this.siteMapFlat === null) {
+
+			this.siteMapFlat = this.agilityClient.getSitemapFlat({
+				languageCode: agilityConfig.languageCode,
+				channelName: agilityConfig.channelName
+			})
+		}
+		return this.siteMapFlat
+	}
+
+	getSitemapNested(): Promise<any> {
+
+		if (this.siteMapNested === null) {
+
+			this.siteMapNested = this.agilityClient.getSitemapNested({
+				languageCode: agilityConfig.languageCode,
+				channelName: agilityConfig.channelName
+			})
+		}
+		return this.siteMapNested
 	}
 
 	getPage(pageID:number): Promise<any> {
@@ -62,7 +81,8 @@ export class AgilityService {
 
 		const lstRes = await this.agilityClient.getContentList({
 			languageCode: agilityConfig.languageCode,
-			referenceName: "globalfooter"
+			referenceName: "globalfooter",
+			expandAllContentLinks: true
 		})
 
 		if (lstRes?.items?.length > 0) {
@@ -72,5 +92,19 @@ export class AgilityService {
 
 		return null
 
+	}
+
+	getContentList(referenceName: string) : Promise<any> {
+		return this.agilityClient.getContentList({
+			languageCode: agilityConfig.languageCode,
+			referenceName
+		})
+	}
+
+	getContentItem(contentID:number) : Promise<any> {
+		return this.agilityClient.getContentItem({
+			languageCode: agilityConfig.languageCode,
+			contentID
+		})
 	}
 }

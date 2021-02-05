@@ -15,6 +15,8 @@ import { ModuleRichTextAreaComponent } from './module-richtextarea/module-richte
 import { ModuleWheretostartComponent } from './module-wheretostart/module-wheretostart.component'
 import { RouteReuseStrategy } from '@angular/router';
 import { AgilityRouteReuseStrategy } from './AgilityRouteReuseStrategy';
+import { ModulePostsListingComponent } from './module-posts-listing/module-posts-listing.component';
+import { ModulePostDetailsComponent } from './module-post-details/module-post-details.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { AgilityRouteReuseStrategy } from './AgilityRouteReuseStrategy';
     GlobalFooterComponent,
     AgilityModuleComponent,
     ModuleRichTextAreaComponent,
-    ModuleWheretostartComponent
+    ModuleWheretostartComponent,
+    ModulePostsListingComponent,
+    ModulePostDetailsComponent
   ],
   imports: [
     BrowserModule,

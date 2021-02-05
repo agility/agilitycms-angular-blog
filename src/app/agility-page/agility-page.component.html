@@ -6,7 +6,7 @@
 	<ng-container *ngFor="let zone of page.zones | keyvalue">
 		<!-- TODO: wrap this in a page template component -->
 		<ng-container *ngFor="let moduleRef of zone.value">
-			<app-agility-module [moduleObj]="moduleRef"></app-agility-module>
+			<app-agility-module [moduleObj]="moduleRef" [page]="this.page" [dynamicPageItem]="this.dynamicPageItem"></app-agility-module>
 		</ng-container>
 	</ng-container>
 

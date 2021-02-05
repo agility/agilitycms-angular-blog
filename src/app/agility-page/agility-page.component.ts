@@ -13,9 +13,10 @@ import { Title } from '@angular/platform-browser';
 })
 export class AgilityPageComponent implements OnInit {
 
-	public pageInSitemap: any
-	public page: any
-	public pageStatus:number
+	public pageInSitemap: any = null
+	public page: any = null
+	public pageStatus:number = 0
+	public dynamicPageItem:any = null
 
 
 	constructor(
@@ -36,9 +37,9 @@ export class AgilityPageComponent implements OnInit {
 			if (currentPath.indexOf("?") !== -1) currentPath = currentPath.substring(0, currentPath.indexOf("?"))
 			if (currentPath === "/") [currentPath] = Object.keys(sitemapFlat)
 
-			const pageInSitemap = sitemapFlat[currentPath]
+			this.pageInSitemap = sitemapFlat[currentPath]
 
-			if (!pageInSitemap) {
+			if (!this.pageInSitemap) {
 				//TODO: load the 404 page...
 				this.pageStatus = 404
 				console.error(`404 - Page ${currentPath} not found in sitemap.`)
@@ -47,19 +48,24 @@ export class AgilityPageComponent implements OnInit {
 
 
 			//get the page object
-			console.log(pageInSitemap)
-			this.page = await this.agilityService.getPage(pageInSitemap.pageID)
+			this.page = await this.agilityService.getPage(this.pageInSitemap.pageID)
 
 			if (!this.page) {
-				console.error(`500 - Page ${currentPath} with id ${pageInSitemap.pageID} could not be loaded.`)
+				console.error(`500 - Page ${currentPath} with id ${this.pageInSitemap.pageID} could not be loaded.`)
 				this.pageStatus = 500
 				return
 			}
 
-			//set the document title...
-			this.titleService.setTitle(this.page.title)
+			//get the dynamic page item
+			if (this.pageInSitemap.contentID > 0) {
 
-			console.log(this.page)
+				this.dynamicPageItem = await this.agilityService.getContentItem(this.pageInSitemap.contentID)
+
+			}
+
+			//set the document title...
+			this.titleService.setTitle(this.pageInSitemap.title)
+
 
 			this.pageStatus = 200
 		} catch (error) {

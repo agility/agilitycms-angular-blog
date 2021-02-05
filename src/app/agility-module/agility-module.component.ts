@@ -17,6 +17,8 @@ import { ModuleService } from '../module.service';
 
 export class AgilityModuleComponent implements OnInit {
 	@Input() moduleObj: any;
+	@Input() page: any;
+	@Input() dynamicPageItem: any;
 	@ViewChild(ModuleDirective, {static: true}) agilityModule: ModuleDirective;
 
 	public loaded:boolean
@@ -53,7 +55,12 @@ export class AgilityModuleComponent implements OnInit {
     const componentRef = viewContainerRef.createComponent<IAgilityModuleComponent>(componentFactory);
 
 	//add the data to the module
-    componentRef.instance.data = this.moduleObj;
+    componentRef.instance.data = {
+		...this.moduleObj,
+		page: this.page,
+		dynamicPageItem: this.dynamicPageItem
+
+	}
 
 	this.loaded = true
   }

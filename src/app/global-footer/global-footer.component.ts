@@ -9,16 +9,17 @@ import { AgilityService } from "../agility.service"
 })
 export class GlobalFooterComponent implements OnInit {
 
-	public footerData: any
+	public globalFooter: any = null
+
 
 	constructor(private agilityService: AgilityService) { }
 
+
 	async ngOnInit(): Promise<void> {
+
+
 		const obj = await this.agilityService.getFooter()
-
-		this.footerData = obj.fields
-
-		console.log("footer", this.footerData)
+		this.globalFooter = obj.fields
 	}
 
 }

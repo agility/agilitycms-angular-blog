@@ -14,9 +14,10 @@ export class GlobalHeaderComponent implements OnInit {
 	}
 
 	async ngOnInit(): Promise<void> {
+		//TODO: also get the nested sitemap here and populate the links in the header
 		let obj = await this.agilityService.getHeader()
 		this.globalHeader = obj.fields
-		console.log("header", obj)
+
 	}
 
 }
