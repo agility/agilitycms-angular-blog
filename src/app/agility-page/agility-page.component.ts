@@ -4,7 +4,7 @@ import { Routes, RouterModule, Router, ActivatedRoute } from "@angular/router";
 
 import { AgilityService } from "../agility.service"
 import { Title } from '@angular/platform-browser';
-
+import { isDevMode } from '@angular/core';
 
 @Component({
 	selector: 'app-agility-page',
@@ -17,7 +17,7 @@ export class AgilityPageComponent implements OnInit {
 	public page: any = null
 	public pageStatus:number = 0
 	public dynamicPageItem:any = null
-
+	public isPreview:boolean
 
 	constructor(
 		private location: Location,
@@ -27,10 +27,12 @@ export class AgilityPageComponent implements OnInit {
 		private agilityService: AgilityService
 	) {
 		this.pageStatus = 0
+		this.isPreview = isDevMode()
 	}
 
 	async ngOnInit(): Promise<void> {
 		try {
+
 			const sitemapFlat = await this.agilityService.getSitemapFlat();
 
 			let currentPath = location.pathname

@@ -17,6 +17,7 @@ import { RouteReuseStrategy } from '@angular/router';
 import { AgilityRouteReuseStrategy } from './AgilityRouteReuseStrategy';
 import { ModulePostsListingComponent } from './module-posts-listing/module-posts-listing.component';
 import { ModulePostDetailsComponent } from './module-post-details/module-post-details.component';
+import { PreviewBarComponent } from './preview-bar/preview-bar.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ModulePostDetailsComponent } from './module-post-details/module-post-de
     ModuleRichTextAreaComponent,
     ModuleWheretostartComponent,
     ModulePostsListingComponent,
-    ModulePostDetailsComponent
+    ModulePostDetailsComponent,
+    PreviewBarComponent
   ],
   imports: [
     BrowserModule,

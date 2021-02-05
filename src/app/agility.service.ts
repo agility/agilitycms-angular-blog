@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core'
+import { isDevMode } from '@angular/core';
 import agilityFetch from '@agility/content-fetch'
 import agilityConfig from "../agility/agility.config"
 
@@ -17,10 +18,13 @@ export class AgilityService {
 
 	constructor() {
 
+		const isPreview:boolean = isDevMode()
+
+		//build the correct api client based on preview or dev mode
 		this.agilityClient = agilityFetch.getApi({
 			guid: agilityConfig.guid,
-			apiKey: agilityConfig.previewAPIKey,
-			isPreview: agilityConfig.isPreview
+			apiKey: isPreview ? agilityConfig.previewAPIKey : agilityConfig.fetchAPIKey,
+			isPreview: isPreview
 		})
 
 	}
