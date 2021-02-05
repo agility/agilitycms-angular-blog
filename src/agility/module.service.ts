@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
 
-import { ModuleRichTextAreaComponent } from './module-richtextarea/module-richtextarea.component'
-import { ModulePostsListingComponent } from "./module-posts-listing/module-posts-listing.component"
-import { ModuleWheretostartComponent } from './module-wheretostart/module-wheretostart.component'
-import { ModulePostDetailsComponent } from "./module-post-details/module-post-details.component"
+import { ModuleRichTextAreaComponent } from '../app/module-richtextarea/module-richtextarea.component'
+import { ModulePostsListingComponent } from "../app/module-posts-listing/module-posts-listing.component"
+import { ModuleWheretostartComponent } from '../app/module-wheretostart/module-wheretostart.component'
+import { ModulePostDetailsComponent } from "../app/module-post-details/module-post-details.component"
 
 @Injectable({
 	providedIn: 'root'

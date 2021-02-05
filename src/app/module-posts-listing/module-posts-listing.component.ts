@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IAgilityModuleComponent } from 'src/agility/agility.module.component';
-import { AgilityService } from '../agility.service';
+import { IAgilityModuleComponent } from 'src/agility/agility.module.icomponent';
+import { AgilityService } from '../../agility/agility.service';
 
 @Component({
   selector: 'app-module-posts-listing',

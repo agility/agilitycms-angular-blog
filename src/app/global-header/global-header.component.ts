@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { isDevMode } from '@angular/core';
-import { AgilityService } from "../agility.service"
+import { AgilityService } from "../../agility/agility.service"
 
 @Component({
 	selector: 'app-global-header',

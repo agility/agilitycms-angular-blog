@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from "@angular/common"
 import { Routes, RouterModule, Router, ActivatedRoute } from "@angular/router";
 
-import { AgilityService } from "../agility.service"
+import { AgilityService } from "../../agility/agility.service"
 import { Title } from '@angular/platform-browser';
 import { isDevMode } from '@angular/core';
 

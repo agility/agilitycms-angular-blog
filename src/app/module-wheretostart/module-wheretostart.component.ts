@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IAgilityModuleComponent } from 'src/agility/agility.module.component';
+import { IAgilityModuleComponent } from 'src/agility/agility.module.icomponent';
 
 @Component({
   selector: 'app-module-wheretostart',

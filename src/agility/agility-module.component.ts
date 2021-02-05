@@ -1,8 +1,8 @@
 import { Component, Input, OnInit, ViewChild, ComponentFactoryResolver, OnDestroy } from '@angular/core';
 
-import { IAgilityModuleComponent } from "../../agility/agility.module.component"
-import { ModuleDirective } from "../module.directive"
-import { ModuleService } from '../module.service';
+import { IAgilityModuleComponent } from "./agility.module.icomponent"
+import { ModuleDirective } from "../app/module.directive"
+import { ModuleService } from './module.service';
 
 
 @Component({

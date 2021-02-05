@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {IAgilityModuleComponent } from "../../agility/agility.module.component"
+import {IAgilityModuleComponent } from "../../agility/agility.module.icomponent"
 
 @Component({
   selector: 'app-module-richtextarea',

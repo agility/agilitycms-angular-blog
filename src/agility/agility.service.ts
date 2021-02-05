@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { isDevMode } from '@angular/core';
 import agilityFetch from '@agility/content-fetch'
-import agilityConfig from "../agility/agility.config"
+import agilityConfig from "./agility.config"
 
 @Injectable({
 	providedIn: 'root'
