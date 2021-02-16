@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { ModuleRichTextAreaComponent } from '../app/module-richtextarea/module-richtextarea.component'
 import { ModulePostsListingComponent } from "../app/module-posts-listing/module-posts-listing.component"
-import { ModuleWheretostartComponent } from '../app/module-wheretostart/module-wheretostart.component'
+import { ModuleHerobackgroundasimageComponent } from '../app/module-herobackgroundasimage/module-herobackgroundasimage.component'
 import { ModulePostDetailsComponent } from "../app/module-post-details/module-post-details.component"
 
 @Injectable({
@@ -21,14 +21,15 @@ export class ModuleService {
 		switch (moduleName.toLowerCase()) {
 			case "richtextarea":
 				return ModuleRichTextAreaComponent;
-			case "wheretostart":
-				return ModuleWheretostartComponent;
+			case "herobackgroundasimage":
+				return ModuleHerobackgroundasimageComponent;
 			case "postslisting":
 				return ModulePostsListingComponent;
 			case "postdetails":
 				return ModulePostDetailsComponent;
 		}
 
+		console.warn(`Module component not found for ${moduleName}.`)
 		return null
 
 	}

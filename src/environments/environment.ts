@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+	production: false,
+	AGILITY_GUID: "3440d72f",
+	AGILITY_API_KEY:"defaultpreview.8ea4ced94a584c9eada7323f5eb78139ee96c4032a1baeff1a8a9cd075bc00a6",
+	AGILITY_LANGUAGE_CODE:"en-us",
+	AGILITY_CHANNEL:"website"
 };
 
 /*

@@ -12,12 +12,12 @@ import { GlobalHeaderComponent } from './global-header/global-header.component';
 import { GlobalFooterComponent } from './global-footer/global-footer.component';
 import { AgilityModuleComponent } from '../agility/agility-module.component';
 import { ModuleRichTextAreaComponent } from './module-richtextarea/module-richtextarea.component';
-import { ModuleWheretostartComponent } from './module-wheretostart/module-wheretostart.component'
 import { RouteReuseStrategy } from '@angular/router';
 import { AgilityRouteReuseStrategy } from '../agility/AgilityRouteReuseStrategy';
 import { ModulePostsListingComponent } from './module-posts-listing/module-posts-listing.component';
 import { ModulePostDetailsComponent } from './module-post-details/module-post-details.component';
 import { PreviewBarComponent } from './preview-bar/preview-bar.component';
+import { ModuleHerobackgroundasimageComponent } from './module-herobackgroundasimage/module-herobackgroundasimage.component';
 
 @NgModule({
   declarations: [
@@ -28,10 +28,10 @@ import { PreviewBarComponent } from './preview-bar/preview-bar.component';
     GlobalFooterComponent,
     AgilityModuleComponent,
     ModuleRichTextAreaComponent,
-    ModuleWheretostartComponent,
     ModulePostsListingComponent,
     ModulePostDetailsComponent,
-    PreviewBarComponent
+    PreviewBarComponent,
+    ModuleHerobackgroundasimageComponent
   ],
   imports: [
     BrowserModule,
