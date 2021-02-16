@@ -1,6 +1,14 @@
 # Agility CMS + Angular -> Blog
 This is a sample Angular 11 blog with Agility CMS.  You can use this as a starting point to build a fully-featured Angular App with a headless cms like Agility.
 
+### Builds:
+
+- Preview: https://agilitycms-angular-blog-preview.netlify.app/
+  - [![Netlify Status](https://api.netlify.com/api/v1/badges/8ecd8982-86bf-498a-a05d-7ecbf4bbf11b/deploy-status)](https://app.netlify.com/sites/agilitycms-angular-blog-preview/deploys)
+
+- Production: https://agilitycms-angular-blog.netlify.app/
+  - [![Netlify Status](https://api.netlify.com/api/v1/badges/0f0a9c03-92a2-4b6a-8d71-187b449c8566/deploy-status)](https://app.netlify.com/sites/agilitycms-angular-blog/deploys)
+
 ## Getting Started
 Angular and Agility CMS, also TypeScript? Oh ya, let's go!
 
@@ -39,7 +47,7 @@ Either way, you're gonna need to grab a few variables from your Agility CMS acco
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 This will also load the latest (staging mode) content from Agility CMS.  When you change content in the CMS, simply reload your page to see those changes updated in the site.
 
@@ -56,7 +64,9 @@ Check out the examples we've provided to learn more!
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `npm run dev` to build the project in preview mode. The build artifacts will be stored in the `dist/` directory.
+
+Run `npm run build` flag for a production build.
 
 ## Further help
 
